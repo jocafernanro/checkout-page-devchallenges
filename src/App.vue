@@ -1,13 +1,29 @@
 <template>
-  <div id="app">
-    <div class="font-bold text-blue-500">Testing Tailwindcss</div>
+  <div id="app" class="container mx-auto">
+    <BaseHeader></BaseHeader>
+    <section class="flex flex-row">
+      <BaseForm></BaseForm>
+      <BaseCart></BaseCart>
+    </section>
+
+    <BaseFooter></BaseFooter>
   </div>
 </template>
 
 <script>
+import BaseHeader from "@/components/base/BaseHeader.vue";
+import BaseForm from "@/components/base/BaseForm.vue";
+import BaseCart from "@/components/base/BaseCart.vue";
+import BaseFooter from "@/components/base/BaseFooter.vue";
+
 export default {
   name: "App",
-  components: {}
+  components: {
+    BaseHeader,
+    BaseForm,
+    BaseCart,
+    BaseFooter
+  }
 };
 </script>
 
