@@ -2,6 +2,9 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
+      minHeight: {
+        "45": "45rem"
+      },
       borderRadius: {
         xl: "0.75rem",
         "2xl": ".9rem"
