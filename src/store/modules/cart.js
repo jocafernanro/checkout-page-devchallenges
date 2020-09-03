@@ -1,4 +1,14 @@
 const state = () => ({
+  formData: {
+    email: "",
+    phone: 0,
+    name: "",
+    address: "",
+    city: "",
+    country: "",
+    postalCode: 0,
+    errors: {}
+  },
   items: [
     {
       id: 1,
@@ -36,6 +46,9 @@ const actions = {
   },
   decreaseItemQuantity({ commit }, item) {
     if (item.quantity > 1) commit("decreaseItemQuantity", item.id);
+  },
+  changeFormData({ commit }, data) {
+    commit("changeFormData", data);
   }
 };
 
@@ -46,6 +59,9 @@ const mutations = {
   },
   decreaseItemQuantity(state, itemId) {
     state.items.find(item => item.id === itemId).quantity--;
+  },
+  changeFormData(state, data) {
+    state.formData[data.input] = data.value;
   }
 };
 

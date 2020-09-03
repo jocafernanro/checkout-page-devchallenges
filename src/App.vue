@@ -1,7 +1,7 @@
 <template>
-  <div id="app" class="container mx-auto">
+  <div id="app" class="container mx-auto p-4">
     <BaseHeader></BaseHeader>
-    <section class="flex flex-row items-start">
+    <section class="flex flex-col lg:flex-row items-start">
       <BaseForm></BaseForm>
       <BaseCart></BaseCart>
     </section>
@@ -22,8 +22,8 @@ export default {
     BaseHeader,
     BaseForm,
     BaseCart,
-    BaseFooter,
-  },
+    BaseFooter
+  }
 };
 </script>
 

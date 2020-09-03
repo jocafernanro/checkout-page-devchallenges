@@ -1,5 +1,5 @@
 <template>
-  <div class="w-5/6 mt-16">
+  <div class="w-full lg:w-5/6 mt-16">
     <h2 class="font-bold text-2xl mb-4">{{ group.title }}</h2>
     <div v-for="(field, index) in group.fields" :key="index">
       <div

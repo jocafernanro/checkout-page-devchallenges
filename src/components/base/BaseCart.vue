@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-2/5 flex flex-col justify-between min-h-45 mt-16 bg-gray-200 rounded-2xl p-10"
+    class="w-full order-first lg:order-none lg:w-2/5 flex flex-col justify-between lg:min-h-45 mt-5 lg:mt-16 bg-gray-200 rounded-2xl p-8 md:p-10"
   >
     <div>
       <CartItem
@@ -19,24 +19,24 @@
       <tbody>
         <tr>
           <td
-            class="border-t-2 font-bold text-2xl text-gray-700 bg-gray-200 px-4 py-2"
+            class="border-t-2 font-bold text-lg lg:text-2xl text-gray-700 bg-gray-200 px-4 py-2"
           >
             Shipping
           </td>
           <td
-            class="border-t-2 font-bold text-xl text-gray-700 bg-gray-200 px-4 py-2 text-right"
+            class="border-t-2 font-bold text-lg lg:text-xl text-gray-700 bg-gray-200 px-4 py-2 text-right"
           >
             $19
           </td>
         </tr>
         <tr class="bg-gray-100">
           <td
-            class="border-t-2 font-bold text-2xl text-gray-700 bg-gray-200 px-4 py-2"
+            class="border-t-2 font-bold text-lg lg:text-2xl text-gray-700 bg-gray-200 px-4 py-2"
           >
             Total
           </td>
           <td
-            class="border-t-2 font-bold text-xl text-gray-700 bg-gray-200 px-4 py-2 text-right"
+            class="border-t-2 font-bold text-lg lg:text-xl text-gray-700 bg-gray-200 px-4 py-2 text-right"
           >
             ${{ total }}
           </td>

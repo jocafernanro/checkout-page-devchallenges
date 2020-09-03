@@ -1,18 +1,29 @@
 <template>
-  <div class="relative mb-4">
-    <label class="text-gray-700 font-bold text-md">{{ inputData.label }}</label>
-    <input
-      :type="inputData.type"
-      class="form-input mt-1 block border-solid w-full border-gray-600 text-gray-600 border-2 pl-16 py-5 rounded-2xl text-xl font-bold"
-      :placeholder="inputData.placeholder"
-    />
-    <i class="material-icons absolute top-1/2 ml-4 text-3xl text-gray-600">{{
-      inputData.icon
-    }}</i>
+  <div class="mb-4">
+    <div class="relative mb-2">
+      <label class="text-gray-700 font-bold text-md">{{
+        inputData.label
+      }}</label>
+      <input
+        :type="inputData.type"
+        :class="errors[type] && 'input-error'"
+        class="form-input mt-1 block border-solid w-full border-gray-600 text-gray-600 border-2 pl-16 py-5 rounded-2xl text-xl font-bold"
+        :placeholder="inputData.placeholder"
+        v-model="data"
+      />
+      <i class="material-icons absolute top-1/2 ml-4 text-3xl text-gray-600">{{
+        inputData.icon
+      }}</i>
+    </div>
+
+    <span v-if="errors[type]" class="text-red-500 font-bold text-sm"
+      >{{ errors[type].error }}
+    </span>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   props: {
     type: String,
@@ -68,6 +79,22 @@ export default {
       }
     };
   },
+  computed: {
+    ...mapState({
+      errors: state => state.form.formData.errors
+    }),
+    data: {
+      get() {
+        return this.$store.state.form.formData[this.type];
+      },
+      set(value) {
+        this.$store.dispatch("form/changeFormData", {
+          value,
+          input: this.type
+        });
+      }
+    }
+  },
   mounted() {
     this.inputData = this.getInputData();
   },
@@ -79,4 +106,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.input-error {
+  @apply border-2;
+  @apply border-red-600;
+}
+</style>

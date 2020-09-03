@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       minHeight: {
-        "45": "45rem"
+        "45": "45rem",
+        "30": "30rem"
       },
       borderRadius: {
         xl: "0.75rem",

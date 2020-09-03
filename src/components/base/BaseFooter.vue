@@ -1,5 +1,7 @@
 <template>
-  <div>BaseFooter</div>
+  <footer class="mt-32 text-gray-600 text-center">
+    josematico.com @jocafernanro
+  </footer>
 </template>
 
 <script>
