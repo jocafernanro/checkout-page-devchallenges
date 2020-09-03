@@ -5,7 +5,7 @@
         ? 'border-red-500 bg-red-100 text-red-900'
         : ' border-teal-500  bg-teal-100 text-teal-900'
     ]"
-    class="fixed top-0 left-0 right-0 mx-auto my-10 w-1/3 border-t-4 rounded-lg  px-4 py-3 shadow-md"
+    class="fixed top-0 left-0 right-0 mx-auto my-10 w-2/3 lg:w-1/3 border-t-4 rounded-lg  px-4 py-3 shadow-md"
     role="alert"
   >
     <div class="flex">
@@ -27,7 +27,7 @@
       </div>
       <div v-else>
         <p class="font-bold">There are some errors</p>
-        <p class="text-sm">Check the input errors messages</p>
+        <p class="text-sm">Check the fields errors messages</p>
       </div>
     </div>
   </div>

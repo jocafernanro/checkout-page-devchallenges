@@ -70,7 +70,7 @@ export default {
 
       // Utilies
       const onlyDigits = value => /^\d+$/.test(value);
-      const onlyLetters = value => /^[A-Za-z]+$/.test(value);
+      const onlyLetters = value => /^[a-zA-Z ]*$/.test(value);
       const isEmailValid = () =>
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.formData.email);
 

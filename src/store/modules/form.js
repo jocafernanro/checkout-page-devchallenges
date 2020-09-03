@@ -1,12 +1,12 @@
 const state = () => ({
   formData: {
     email: "",
-    phone: 0,
+    phone: undefined,
     name: "",
     address: "",
     city: "",
     country: "",
-    postalCode: 0,
+    postalCode: undefined,
     errors: {}
   }
 });
