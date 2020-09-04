@@ -5,7 +5,7 @@ The challenge and the requirements here: [https://devchallenges.io/challenges/0J
 
 ## Project
 
-This is a simple vue project with tailwindcss and no much more. Check it on live here: https://checkout-page-devchallenges.josematico.com/
+This is a simple vue project with Vuex, tailwindcss and no much more. Check it on live here: https://checkout-page-devchallenges.josematico.com/
 
 ## Project setup
 
