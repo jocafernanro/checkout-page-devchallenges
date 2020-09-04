@@ -64,6 +64,13 @@ export default {
     })
   },
   methods: {
+    check(checkerFails, errors, property, error) {
+      if (checkerFails()) {
+        errors[property] = error;
+      } else {
+        delete errors[property];
+      }
+    },
     checkForm() {
       let errors = {};
       this.showAlert = true;
@@ -107,62 +114,40 @@ export default {
         !onlyDigits(this.formData.postalCode) ||
         this.formData.postalCode < 4;
 
-      if (emailErrors()) {
-        errors.email = {
-          error:
-            "Email must be filled and contains an email structure email@domain.com"
-        };
-      } else {
-        delete errors.email;
-      }
-      if (phoneErrors()) {
-        errors.phone = {
-          error:
-            "Phone must be filled, contains only numbers and more than 4 chars"
-        };
-      } else {
-        delete errors.phone;
-      }
-      if (nameErrors()) {
-        errors.name = {
-          error:
-            "Name must be filled, filled as text and contains more than 4 chars"
-        };
-      } else {
-        delete errors.name;
-      }
-      if (addressErrors()) {
-        errors.address = {
-          error:
-            "Address must be filled, filled as text and contains more than 4 chars"
-        };
-      } else {
-        delete errors.address;
-      }
-      if (cityErrors()) {
-        errors.city = {
-          error:
-            "City must be filled, filled as text and contains more than 3 chars"
-        };
-      } else {
-        delete errors.city;
-      }
-      if (countryErrors()) {
-        errors.country = {
-          error:
-            "Country must be filled, filled as text and contains more than 4 chars"
-        };
-      } else {
-        delete errors.country;
-      }
-      if (postalCodeErrors()) {
-        errors.postalCode = {
-          error:
-            "Postal code must be filled, contains numbers and more than 3 chars"
-        };
-      } else {
-        delete errors.postalCode;
-      }
+      this.check(emailErrors, errors, "email", {
+        error:
+          "Email must be filled and contains an email structure email@domain.com"
+      });
+
+      this.check(phoneErrors, errors, "phone", {
+        error:
+          "Phone must be filled, contains only numbers and more than 4 chars"
+      });
+
+      this.check(nameErrors, errors, "name", {
+        error:
+          "Name must be filled, filled as text and contains more than 4 chars"
+      });
+
+      this.check(addressErrors, errors, "address", {
+        error:
+          "Address must be filled, filled as text and contains more than 4 chars"
+      });
+
+      this.check(cityErrors, errors, "city", {
+        error:
+          "City must be filled, filled as text and contains more than 3 chars"
+      });
+
+      this.check(countryErrors, errors, "country", {
+        error:
+          "Country must be filled, filled as text and contains more than 4 chars"
+      });
+
+      this.check(postalCodeErrors, errors, "postalCode", {
+        error:
+          "Postal code must be filled, contains numbers and more than 3 chars"
+      });
 
       this.$store.dispatch("form/setError", errors);
       setTimeout(() => {

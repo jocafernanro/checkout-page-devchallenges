@@ -23,6 +23,7 @@
       }}</label>
       <div class="relative">
         <select
+          :class="errors[type] && 'input-error'"
           class="form-input mt-1 block border-solid w-full border-gray-600 text-gray-800 border-2 pl-12 md:pl-16 py-5 rounded-2xl text-lg md:text-xl font-bold"
           v-model="data"
           id="grid-state"
